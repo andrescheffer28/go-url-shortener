@@ -16,7 +16,8 @@ func main() {
 }
 
 func run() error {
-	handler := api.NewHandler()
+	db := make(map[string]string)
+	handler := api.NewHandler(db)
 
 	s := http.Server{
 		Addr:         ":8080",
